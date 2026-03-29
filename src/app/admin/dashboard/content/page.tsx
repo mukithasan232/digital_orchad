@@ -1,6 +1,6 @@
 "use client";
 
-import { Copy, Plus, Sparkles } from "lucide-react";
+import { Plus, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 export default function AdminContentPage() {
@@ -33,7 +33,7 @@ export default function AdminContentPage() {
        } else {
           alert("Error: " + json.error);
        }
-     } catch (err) {
+     } catch {
        alert("Network failed during generation.");
      } finally {
         setIsGenerating(false);

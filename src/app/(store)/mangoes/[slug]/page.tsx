@@ -56,7 +56,9 @@ export default async function ProductOrVarietyPage({ params }: PageProps) {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
   // Supabase Fetchers
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let fetchedProducts: any[] = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let fetchedSingleProduct: any = null;
 
   if (supabaseUrl && supabaseUrl !== 'your_project_url') {
