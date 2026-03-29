@@ -14,6 +14,11 @@ export async function updateSession(request: NextRequest) {
      return supabaseResponse;
   }
 
+  // Bypass for Demo Admin
+  if (request.cookies.get('sb-dummy-auth')?.value === 'true') {
+     return supabaseResponse;
+  }
+
   const supabase = createServerClient(
     supabaseUrl,
     supabaseKey,
