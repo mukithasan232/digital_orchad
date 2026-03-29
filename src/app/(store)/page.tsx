@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { blogPosts, varieties } from "@/lib/data";
-import { ArrowRight, Star, ShieldCheck, Truck, Clock, ShoppingCart } from "lucide-react";
+import { ArrowRight, Star, ShieldCheck, Truck, Clock } from "lucide-react";
 
 export default function Home() {
   const jsonLd = {

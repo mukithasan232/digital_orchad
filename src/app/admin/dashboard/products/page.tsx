@@ -1,6 +1,5 @@
 import { Package, Plus } from "lucide-react";
 import { createClient } from '@/lib/supabase/server';
-import Image from "next/image";
 import Link from "next/link";
 
 export default async function AdminProductsPage() {
@@ -8,7 +7,7 @@ export default async function AdminProductsPage() {
   
   // RLS (Row Level Security) ensures that if this is a farmer, 
   // they ONLY get their own products. If it is an admin, they get all.
-  const { data: products, error } = await supabase.from('products').select('*');
+  const { data: products } = await supabase.from('products').select('*');
 
   // Hardcoded fallback data if Supabase isn't setup
   const isMock = !products || products.length === 0;
@@ -50,6 +49,7 @@ export default async function AdminProductsPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
               {displayProducts?.map((product: any) => (
                 <tr key={product.id} className="transition-colors hover:bg-muted/30">
                   <td className="p-4 px-6 align-middle font-bold text-foreground">
